@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="jquery-2.0.3.min.js"></script>
+	<script src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href="stylesheet2.css">
+	<title>PseudoKu</title>
+</head>
+<body>
+<script type="text/javascript">
+		$( document ).ready( function() {
+			var game = Sudoku.getInstance();
+			$( '#container').append( game.getGameBoard() );
+			$( '#solve').click( function() {
+				game.solve();
+			} );
+			$( '#validate').click( function() {
+				game.validate();
+			} );
+			$( '#reset').click( function() {
+				game.reset();
+			} );
+		} );
+		</script>
+		<br>
+		<center><div id="title"><h1>Let's Play PseudoKu!</h1></div></center>
+		<br>
+		<center><div id="container"></div></center>
+		<center>
+		<div id="menu" class="sudoku-menu">
+			<button id="solve">Solve</button>
+			<button id="reset">Reset</button>
+		</div>
+		</center>
+	
+</body>
+</html>
